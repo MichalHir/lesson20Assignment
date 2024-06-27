@@ -16,7 +16,9 @@ def choose(cars_array, selection):
         delete_car(cars_array)
         save_json(cars_array)
     if selection == "5":
-        search_print(cars_array)
+        search_txt = search_print(cars_array)
+        if search_txt!="":
+            print(search_txt)
     if selection == "6":
         add_to_favorites(cars_array)
         save_json(cars_array)
@@ -24,6 +26,7 @@ def choose(cars_array, selection):
         remove_from_favorites(cars_array)
         save_json(cars_array)
     if selection == "8":
-        print_favorites(cars_array)
+        fav_txt = print_favorites(cars_array)
+        print(fav_txt)
     if selection == "9":
         save_json(cars_array)

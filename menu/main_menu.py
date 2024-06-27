@@ -1,8 +1,10 @@
+from json_helper import read_json
 from menu.menu_choice import choose
 
 
-def menu(cars_array):
+def menu():
     while True:
+        cars_array = read_json()
         print("welcome to the garage")
         print("write 1 if you want to print all of the cars")
         print("write 2 if you want to add a car")
@@ -13,7 +15,7 @@ def menu(cars_array):
         print("write 7 if you want to remove a car from favourite")
         print("write 8 if you want to print all of the favourite cars")
         print("write 9 if you want to exit the menu")
-        choice = input("enter your choice")
+        choice = input("enter your choice\n")
         choose(cars_array, choice)
         if choice == "9":
             print("goodbye")
