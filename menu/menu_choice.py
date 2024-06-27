@@ -1,15 +1,29 @@
-from crud.basic_functions import add_car, delete_car, edit_car, print_all
+from crud.basic_functions import add_car, delete_car, edit_car, print_all, search_print
+from crud.favourites import add_to_favorites, print_favorites, remove_from_favorites
 from json_helper import save_json
 
 
-def choose(cars_array, election):
-    if election == "1":
+def choose(cars_array, selection):
+    if selection == "1":
         print_all(cars_array)
-    if election == "2":
+    if selection == "2":
         add_car(cars_array)
-    if election == "3":
+        save_json(cars_array)
+    if selection == "3":
         edit_car(cars_array)
-    if election == "4":
+        save_json(cars_array)
+    if selection == "4":
         delete_car(cars_array)
-    if election == "5":
+        save_json(cars_array)
+    if selection == "5":
+        search_print(cars_array)
+    if selection == "6":
+        add_to_favorites(cars_array)
+        save_json(cars_array)
+    if selection == "7":
+        remove_from_favorites(cars_array)
+        save_json(cars_array)
+    if selection == "8":
+        print_favorites(cars_array)
+    if selection == "9":
         save_json(cars_array)
